@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: mcr.microsoft.com/playwright:focal
+    steps:
+      - checkout
+
+      - run:
+          name: "Install dependencies"
+          command: npm install
+
+      - run:
+          name: "Run UI tests"
+          command: npm run test:ui
+
+      - run:
+          name: "Run API tests"
+          command: npm run test:api
+
+      - store_artifacts:
+          path: ./autotests/test-results
