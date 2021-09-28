@@ -6,7 +6,7 @@ const config = {
         viewport: { width: 1280, height: 720 },
         ignoreHTTPSErrors: true,
         screenshot: 'only-on-failure',
-        video: 'on-first-retry',
+        video: 'on',
     },
 };
 
